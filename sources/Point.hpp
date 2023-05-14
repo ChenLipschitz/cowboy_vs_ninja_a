@@ -13,7 +13,7 @@ namespace ariel{
         double getY() const;
         void print();
         double distance(const Point &other);
-        Point moveTowards(double dist);
+        Point moveTowards(Point source, Point destination, double dist);
 
 
         private:
