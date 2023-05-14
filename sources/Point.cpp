@@ -26,7 +26,7 @@ double Point::getY() const{
 }
 
 void Point::print(){
-    cout << "Point: \n(" << this->x << "," << this->y << ")" << endl;
+    cout << "Location: \n(" << this->x << "," << this->y << ")" << endl;
 }
 
 double Point::distance(const Point &other){
