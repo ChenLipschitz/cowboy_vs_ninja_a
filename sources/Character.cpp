@@ -5,9 +5,9 @@
 using namespace ariel;
 using namespace std;
 
-Character::Character(Point location_, int hit_, string name_){
+Character::Character(string name_, Point location_){
     this->location = location_;
-    this-> score = hit_;
+    this-> score;
     this-> name = name_;
 }
 
@@ -23,6 +23,10 @@ int Character::getHit(){
     return this->score;
 }
 
+void Character::setHit(int num){
+    this->score = num;
+}
+
 void Character::hit(int num){
     score = score-num;
 }
@@ -36,7 +40,7 @@ Point Character::getLocation(){
 }
 
 void Character::print(){
-    cout<<"Character-\nName: "<< this->name <<endl;
+    cout<<"Name: "<< this->name <<endl;
     this->location.print();
     cout<<"Score: "<<this->score<<endl;
 }
