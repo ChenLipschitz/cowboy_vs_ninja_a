@@ -18,7 +18,7 @@ namespace ariel{
         virtual void add(Character* player);
         virtual void attack(Team* enemy);
         int stillAlive() const;
-        virtual void print();
+        virtual string print();
 
         private:
         Character captain;
@@ -34,7 +34,7 @@ namespace ariel{
         Team2& operator=(const Team2& other);  // Overloaded assignment operator
 
         void attack(Team* enemy) override;
-        void print() override;
+        string print() override;
         int stillAlive() const;
 
     };
@@ -47,6 +47,6 @@ namespace ariel{
             SmartTeam& operator=(const SmartTeam& other);
             
             void attack(Team* team) override;
-            void print() override; 
+            string print() override; 
     };
 }

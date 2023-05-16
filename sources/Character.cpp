@@ -5,9 +5,16 @@
 using namespace ariel;
 using namespace std;
 
+
+//-------------------------- constructors & initializations --------------------------//
+Character::Character(){
+    this->location = Point();
+    this-> score = 0;
+    this-> name = "";
+}
 Character::Character(string name_, Point location_){
     this->location = location_;
-    this-> score;
+    this-> score = 0;
     this-> name = name_;
 }
 
@@ -39,8 +46,9 @@ Point Character::getLocation(){
     return this->location;
 }
 
-void Character::print(){
+string Character::print(){
     cout<<"Name: "<< this->name <<endl;
     this->location.print();
     cout<<"Score: "<<this->score<<endl;
+    return"";
 }

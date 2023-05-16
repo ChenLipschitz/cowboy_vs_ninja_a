@@ -17,14 +17,21 @@ Point::Point(double x_, double y_){
     this->y = y_;
 }
 
-//-------------------------- getters --------------------------//
+//-------------------------- getters & setters--------------------------//
 double Point::getX() const{
     return this->x;
 }
 double Point::getY() const{
     return this->y;
 }
+void Point::setX(double x_){
+    this->x = x_;
+}
+void Point::setY(double y_){
+    this->y = y_;
+}
 
+//-------------------------- methods --------------------------//
 void Point::print(){
     cout << "Location: \n(" << this->x << "," << this->y << ")" << endl;
 }
@@ -38,5 +45,16 @@ double Point::distance(const Point &other){
 }
 
 Point Point::moveTowards(Point source, Point destination, double dist){
+    if (dist<0){
+        throw std::invalid_argument("ERROR- distance cannot be negative");
+    }
+    return *this;
+}
+
+Point& Point::operator=(const Point& other) {
+    if (this != &other) {
+        x = other.x;
+        y = other.y;
+    }
     return *this;
 }

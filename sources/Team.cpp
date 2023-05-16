@@ -49,9 +49,11 @@ int Team::stillAlive() const{
     //         alives++;
     //     }
     // }
+    return 0;
 }
-void Team::print(){
-    cout<<"hello"<<endl;
+string Team::print(){
+    // cout<<"hello"<<endl;
+    return "";
 }
 
 
@@ -60,7 +62,7 @@ void Team::print(){
 Team2::Team2(Character* captain) : Team(captain){}
 
 void Team2::attack(Team* enemy) {}
-void Team2::print() {}
+string Team2::print() {return"";}
 
 int Team2::stillAlive() const {
     return 1;

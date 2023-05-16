@@ -1,10 +1,11 @@
 #pragma once
-#include "Point.hpp";
+#include "Point.hpp"
 #include <iostream>
 
 using namespace std;
 namespace ariel{
 
+    //-------------------------- Character --------------------------//
     class Character{
         
         public:
@@ -17,7 +18,7 @@ namespace ariel{
         void hit(int num);
         string getName();
         Point getLocation();
-        virtual void print();
+        virtual string print();
         
 
         private:
@@ -26,6 +27,7 @@ namespace ariel{
         string name;
     };
 
+    //-------------------------- Cowboy --------------------------//
     class Cowboy : public Character{
 
         public:
@@ -39,11 +41,12 @@ namespace ariel{
 
     };
 
+    //-------------------------- Ninja --------------------------//
     class Ninja : public Character{
 
         public:
         Ninja(string name, Point location);
-        void move(Character* enemy);
+        virtual void move(Character* enemy);
         void slash(Character* enemy);
         void setSpeed(int speed_);
 
@@ -51,6 +54,7 @@ namespace ariel{
         int speed;
     };
 
+    //-------------------------- Different types of Ninjas --------------------------//
     class OldNinja : public Ninja{
         public:
         OldNinja(string name, Point location);
@@ -59,6 +63,7 @@ namespace ariel{
      class TrainedNinja : public Ninja{
         public:
         TrainedNinja(string name, Point location);
+        void move(Character* enemy) override;
     };
 
      class YoungNinja : public Ninja{
