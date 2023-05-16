@@ -33,7 +33,7 @@ void Point::setY(double y_){
 
 //-------------------------- methods --------------------------//
 void Point::print(){
-    cout << "Location: \n(" << this->x << "," << this->y << ")" << endl;
+    cout << "Location: (" << this->x << "," << this->y << ")" << endl;
 }
 
 double Point::distance(const Point &other){
