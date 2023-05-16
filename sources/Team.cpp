@@ -9,8 +9,8 @@ using namespace std;
 
 //-------------------------- constructors & initializations --------------------------//
 Team::Team(Character* captain_){
-    captain = *captain_;
-    players.push_back(&captain);
+    this->captain = captain_;
+    players.push_back(captain);
 }
 Team::Team(const Team& other) : captain(other.captain), players(), size(0) {    // Copy constructor
     for (const auto& player : other.players) {

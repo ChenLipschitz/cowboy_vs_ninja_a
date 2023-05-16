@@ -11,6 +11,7 @@ namespace ariel{
         public:
         Character();
         Character(string name_, Point location_);
+        virtual ~Character() = default;
         bool isAlive();
         double distance(Character &other);
         int getHit();
@@ -32,6 +33,7 @@ namespace ariel{
 
         public:
         Cowboy(string name, Point location);
+        ~Cowboy() override = default;
         void shoot(Character* enemy);
         bool hasBoolets();
         void reload();
@@ -46,6 +48,7 @@ namespace ariel{
 
         public:
         Ninja(string name, Point location);
+        ~Ninja() override = default;
         virtual void move(Character* enemy);
         void slash(Character* enemy);
         void setSpeed(int speed_);

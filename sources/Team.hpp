@@ -21,7 +21,7 @@ namespace ariel{
         virtual string print();
 
         private:
-        Character captain;
+        Character* captain;
         vector<Character*> players; 
         int size;
     };

@@ -18,7 +18,7 @@ namespace ariel{
         void print();
         double distance(const Point &other);
         Point moveTowards(Point source, Point destination, double dist);
-        Point& operator=(const Point& other);
+        // Point& operator=(const Point& other);
 
         private:
         double x;

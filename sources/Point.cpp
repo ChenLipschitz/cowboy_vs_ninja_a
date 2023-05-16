@@ -51,10 +51,10 @@ Point Point::moveTowards(Point source, Point destination, double dist){
     return *this;
 }
 
-Point& Point::operator=(const Point& other) {
-    if (this != &other) {
-        x = other.x;
-        y = other.y;
-    }
-    return *this;
-}
+// Point& Point::operator=(const Point& other) {
+//     if (this != &other) {
+//         x = other.x;
+//         y = other.y;
+//     }
+//     return *this;
+// }
