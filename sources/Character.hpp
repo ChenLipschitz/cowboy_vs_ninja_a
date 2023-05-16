@@ -17,7 +17,7 @@ namespace ariel{
         void hit(int num);
         string getName();
         Point getLocation();
-        void print();
+        virtual void print();
         
 
         private:
