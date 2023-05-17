@@ -5,50 +5,40 @@
 using namespace ariel;
 using namespace std;
 
+//basic implementation
 
-//-------------------------- constructors & initializations --------------------------//
-Character::Character(){
-    this->location = Point();
-    this-> score = 0;
-    this-> name = "";
-}
-Character::Character(string name_, Point location_){
+//-------------------------- constructor & initializations --------------------------//
+Character::Character(string name_, Point location_, int hit_points_){
+    this->name = name_;
     this->location = location_;
-    this-> score = 0;
-    this-> name = name_;
+    this->hit_points = hit_points_;
 }
 
-bool Character::isAlive(){
-    return this-> score>0;
+
+//-------------------------- getters & setters --------------------------//
+int Character::getHit() const{
+    return this->hit_points;
 }
 
-double Character::distance(Character &other){
-    return 0.0;
+void Character::setHit(int new_hit){
+    this->hit_points = new_hit;
 }
 
-int Character::getHit(){
-    return this->score;
-}
-
-void Character::setHit(int num){
-    this->score = num;
-}
-
-void Character::hit(int num){
-    score = score-num;
-}
-        
-string Character::getName(){
+string Character::getName() const{
     return this->name;
 }
-        
-Point Character::getLocation(){
+
+Point Character::getLocation() const{
     return this->location;
 }
 
-string Character::print(){
-    cout<<"Name: "<< this->name <<endl;
-    this->location.print();
-    cout<<"Score: "<<this->score<<endl;
-    return"";
+
+//-------------------------- class methods --------------------------//
+
+bool Character::isAlive(){
+    return this->hit_points > 0;
+}
+
+void Character::hit(int num){
+    hit_points = hit_points - num;
 }

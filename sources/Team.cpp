@@ -24,17 +24,17 @@ Team::~Team() { // Destructor
 }
 
 //-------------------------- Overloaded assignment operator --------------------------//
-Team& Team::operator=(const Team& other) {
-    if (this != &other) {
-        captain = other.captain;    // Copy the captain
-        players.clear();           // Copy the players vector
-        for (auto player : other.players) {
-            players.push_back(new Character(*player));
-        }
-        size = other.size;
-    }
-    return *this;
-}
+// Team& Team::operator=(const Team& other) {
+//     if (this != &other) {
+//         captain = other.captain;    // Copy the captain
+//         players.clear();           // Copy the players vector
+//         for (auto player : other.players) {
+//             players.push_back(new Character(*player));
+//         }
+//         size = other.size;
+//     }
+//     return *this;
+// }
 
 //-------------------------- the class methods --------------------------//
 void Team::add(Character* player){

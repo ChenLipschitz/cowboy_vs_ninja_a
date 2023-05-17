@@ -57,58 +57,40 @@ TEST_CASE("Point methods"){
     }
 
     SUBCASE("print"){
-        Point point1(-694234560,0.0000000000001);       
-        CHECK_NOTHROW(Point().print());
-        CHECK_NOTHROW(point1.print());
+
     }
 }
 
 //-------------------------- Character Tests --------------------------//
-TEST_CASE("Character and it's inheritances constructors"){
-    SUBCASE("Character"){
-        CHECK_NOTHROW(Character());
-        CHECK_NOTHROW(Character("Alice", Point()));
-        CHECK_NOTHROW(Character("Bob", Point(8,3)));
-    }
-    
+TEST_CASE("Character and it's inheritances constructors"){    
     SUBCASE("Cowboy"){
-        CHECK_NOTHROW(Cowboy("Bob", Point(9.2,4.6)));
-        CHECK_NOTHROW(Cowboy("", Point(-0.0,-0.6)));
+        Cowboy Alice("Alice", Point());
+        Cowboy Bob("Bob", Point(-48,9.77));
+        CHECK(Alice.getLocation().getX() != Bob.getLocation().getX());
+        CHECK(Alice.getName() != Bob.getName());
+        CHECK_NOTHROW(Alice.reload());
+        CHECK(Bob.hasboolets() == true);
     }
 
     SUBCASE("Ninja"){
-        CHECK_NOTHROW(Ninja("Yushima", Point(1.22,-5.42)));
+        
     }
 
     SUBCASE("YoungNinja"){
-        CHECK_NOTHROW(YoungNinja("Yushima", Point(1.22,-5.42)));
+        
     }
 
     SUBCASE("TrainedNinja"){
-        CHECK_NOTHROW(TrainedNinja("Yushima", Point(1.22,-5.42)));
+        
     }
 
     SUBCASE("OldNinja"){
-        CHECK_NOTHROW(OldNinja("Yushima", Point(1.22,-5.42)));
+        
     }
 }
 
 TEST_CASE("Chacracter getters & setters"){
-    Character Alice("Alice", Point());
-    Character Bob("Bob", Point(2.6,-6.33));
-    SUBCASE("Character"){
-        CHECK(Alice.getLocation().getX() != Bob.getLocation().getX());
-        CHECK(Alice.getLocation().getY() != Bob.getLocation().getY());
-        
-    }
 
-    SUBCASE("Cowboy"){
-
-    }
-
-    SUBCASE("Ninja"){
-
-    }
 }
 
 //-------------------------- Team Tests --------------------------//

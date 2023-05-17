@@ -3,29 +3,30 @@
 #include <iostream>
 
 using namespace std;
-namespace ariel{
+
+namespace ariel {
 
     //-------------------------- Character --------------------------//
     class Character{
         
         public:
-        Character();
-        Character(string name_, Point location_);
+        Character(string name, Point location, int hit_points);
         virtual ~Character() = default;
+
         bool isAlive();
         double distance(Character &other);
-        int getHit();
-        void setHit(int num);
-        void hit(int num);
-        string getName();
-        Point getLocation();
-        virtual string print();
-        
+        void hit(int);
+        virtual string print() const = 0;
+        string getName() const;
+        Point getLocation() const;
+        int getHit() const;
+        void setHit(int);
 
         private:
-        Point location;
-        int score;
         string name;
+        Point location;
+        int hit_points;      
+        
     };
 
     //-------------------------- Cowboy --------------------------//
@@ -34,9 +35,11 @@ namespace ariel{
         public:
         Cowboy(string name, Point location);
         ~Cowboy() override = default;
+
         void shoot(Character* enemy);
-        bool hasBoolets();
+        bool hasboolets() const;
         void reload();
+        string print() const override;
 
         private:
         int num_of_bullets;
@@ -49,9 +52,11 @@ namespace ariel{
         public:
         Ninja(string name, Point location);
         ~Ninja() override = default;
-        virtual void move(Character* enemy);
+        void move(Character* enemy);
         void slash(Character* enemy);
         void setSpeed(int speed_);
+        int getSpeed() const;
+        string print() const override;
 
         private:
         int speed;
@@ -61,16 +66,18 @@ namespace ariel{
     class OldNinja : public Ninja{
         public:
         OldNinja(string name, Point location);
+        // string print() const override;
     };
 
-     class TrainedNinja : public Ninja{
+    class TrainedNinja : public Ninja{
         public:
         TrainedNinja(string name, Point location);
-        void move(Character* enemy) override;
+        // string print() const override;
     };
 
-     class YoungNinja : public Ninja{
+    class YoungNinja : public Ninja{
         public:
         YoungNinja(string name, Point location);
+        // string print() const override;
     };
 }
