@@ -36,23 +36,16 @@ Team::~Team() { // Destructor
 //     return *this;
 // }
 
-//-------------------------- the class methods --------------------------//
+//-------------------------- class methods --------------------------//
 void Team::add(Character* player){
     // players.push_back(player);
     // size++;
 }
 void Team::attack(Team* enemy){}
 int Team::stillAlive() const{
-    // int alives = 0;
-    // for(int i=0; i<players.size(); i++ ){
-    //     if (players[i]->isAlive()){
-    //         alives++;
-    //     }
-    // }
     return 0;
 }
 string Team::print(){
-    // cout<<"hello"<<endl;
     return "";
 }
 

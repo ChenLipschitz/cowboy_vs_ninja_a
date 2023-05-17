@@ -6,27 +6,24 @@ using namespace std;
 using namespace ariel;
 
 //-------------------------- Ninja --------------------------//
-
-
 Ninja::Ninja(string name, Point location) : Character(name, location, -1) {}
 
+//--- getters & setters ---//
 int Ninja::getSpeed() const{
     return this->speed;
 }
-
 void Ninja::setSpeed(int speed_){
     this->speed = speed_;
 }
 
+//--- class methods ---//
 void Ninja::move(Character* enemy) {
 }
-
 void Ninja::slash(Character* enemy) {
         if (!isAlive()){
         throw std::runtime_error("Error- the ninja is not alive");
     }
 }
-
 string Ninja::print() const{
     return "";
 }

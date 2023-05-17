@@ -12,7 +12,6 @@ namespace ariel {
         public:
         Character(string name, Point location, int hit_points);
         virtual ~Character() = default;
-
         bool isAlive();
         double distance(Character &other);
         void hit(int);
@@ -35,7 +34,6 @@ namespace ariel {
         public:
         Cowboy(string name, Point location);
         ~Cowboy() override = default;
-
         void shoot(Character* enemy);
         bool hasboolets() const;
         void reload();
@@ -66,18 +64,15 @@ namespace ariel {
     class OldNinja : public Ninja{
         public:
         OldNinja(string name, Point location);
-        // string print() const override;
     };
 
     class TrainedNinja : public Ninja{
         public:
         TrainedNinja(string name, Point location);
-        // string print() const override;
     };
 
     class YoungNinja : public Ninja{
         public:
         YoungNinja(string name, Point location);
-        // string print() const override;
     };
 }
