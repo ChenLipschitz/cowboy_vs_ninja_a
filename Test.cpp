@@ -89,9 +89,6 @@ TEST_CASE("Character and it's inheritances constructors"){
     }
 }
 
-TEST_CASE("Chacracter getters & setters"){
-
-}
 
 //-------------------------- Team Tests --------------------------//
 TEST_CASE("Team and it's inheritances constructors"){

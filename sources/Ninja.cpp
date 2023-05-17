@@ -8,7 +8,7 @@ using namespace ariel;
 //-------------------------- Ninja --------------------------//
 
 
-Ninja::Ninja(string name, Point location) : Character(name, location, 100) {}
+Ninja::Ninja(string name, Point location) : Character(name, location, -1) {}
 
 int Ninja::getSpeed() const{
     return this->speed;
