@@ -70,6 +70,7 @@ TEST_CASE("Character and it's inheritances constructors"){
         CHECK(Alice.getName() != Bob.getName());
         CHECK_NOTHROW(Alice.reload());
         CHECK(Bob.hasboolets() == true);
+        CHECK(Bob.getHit() == 110);
     }
 
     SUBCASE("Ninja"){
@@ -77,15 +78,27 @@ TEST_CASE("Character and it's inheritances constructors"){
     }
 
     SUBCASE("YoungNinja"){
-        
+        YoungNinja Alice("Alice", Point(4.333, 3.44));
+        CHECK(Alice.getSpeed() == 14);
+        CHECK(Alice.getHit() == 100);
     }
 
     SUBCASE("TrainedNinja"){
-        
+        TrainedNinja Alice("Alice", Point(4.333, 3.44));
+        CHECK(Alice.getSpeed() == 12);
+        CHECK(Alice.getHit() == 120);
+        CHECK_NOTHROW(Alice.setHit(110));
+        Alice.setHit(120);
+        CHECK(Alice.getHit() == 120);
     }
 
     SUBCASE("OldNinja"){
-        
+        OldNinja Alice("Alice", Point(4.333, 3.44));
+        CHECK(Alice.getSpeed() == 8);
+        CHECK(Alice.getHit() == 150);
+        CHECK_NOTHROW(Alice.setSpeed(10));
+        Alice.setSpeed(8);
+        CHECK(Alice.getSpeed() == 8);
     }
 }
 

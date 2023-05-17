@@ -6,7 +6,7 @@ using namespace std;
 using namespace ariel;
 
 //-------------------------- Ninja --------------------------//
-Ninja::Ninja(string name, Point location) : Character(name, location, -1) {}
+Ninja::Ninja(string name, Point location) : Character(name, location, 100) {}
 
 //--- getters & setters ---//
 int Ninja::getSpeed() const{
