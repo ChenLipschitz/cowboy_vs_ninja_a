@@ -57,7 +57,8 @@ TEST_CASE("Point methods"){
     }
 
     SUBCASE("print"){
-
+        Point point1(-2,9.004568);
+        CHECK_NOTHROW(point1.print());
     }
 }
 
@@ -71,10 +72,6 @@ TEST_CASE("Character and it's inheritances constructors"){
         CHECK_NOTHROW(Alice.reload());
         CHECK(Bob.hasboolets() == true);
         CHECK(Bob.getHit() == 110);
-    }
-
-    SUBCASE("Ninja"){
-        
     }
 
     SUBCASE("YoungNinja"){
