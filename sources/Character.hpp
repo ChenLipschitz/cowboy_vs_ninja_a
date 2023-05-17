@@ -48,7 +48,6 @@ namespace ariel {
     class Ninja : public Character{
 
         public:
-        Ninja(string name, Point location);
         ~Ninja() override = default;
         void move(Character* enemy);
         void slash(Character* enemy);
@@ -58,6 +57,9 @@ namespace ariel {
 
         private:
         int speed;
+
+        protected:
+        Ninja(string name, Point location);
     };
 
     //-------------------------- Different types of Ninjas --------------------------//
